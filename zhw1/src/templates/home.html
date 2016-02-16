@@ -1,1 +1,21 @@
+<style>
+.bold{font-weight: bold;}
+.no_margin{margin: 0px;}
+.no_padding{padding: 0px;}
+</style>
+
 <h1> hello </h1>
+<br/>
+<!-- {{all_objects}} -->
+<br/>
+
+{% for blog in all_objects %}
+  <div style="margin-bottom:40px;">
+      <h3 class="no_margin no_padding">Title: {{blog.title}}</h3>
+      <ul>
+        <li>context: {{blog.title}}</li>
+        <li>date: {{blog.after}}</li>
+      </ul>
+  </div>
+    
+{% endfor %}
