@@ -1,0 +1,5 @@
+Django==1.9.2
+django-registration==2.0.4
+requests==2.9.1
+virtualenv==13.1.2
+wheel==0.26.0
