@@ -9,6 +9,25 @@ p style="font-size:100px"
 
 <h1> Homepage </h1>
 
+{% if request.user.is_authenticated %}
+<h1> Welcome {{ request.user }} </h1>
+<a href="{% url 'logout' %}?next=/home/">Logout</a>
+
+{% else %}
+<h1> Please LogIn </h1>
+<form method = 'POST' action = '{% url "login" %}'>{% csrf_token %}           
+              <input type= 'text'  name = 'username' placeholder = 'Username' />
+              <input type= 'password' name = 'password' placeholder = 'Password' />
+              <button type= 'submit' >Login</button>
+</form>
+{% endif %}
+
+
+
+
+
+
+
 <form method = 'POST' action=''>{% csrf_token %}
      {{ form.as_p }}
 <input type='submit' name='button1' value='save'/>
